@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帖子</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    h1 { text-align: center; }
+    .back { margin-bottom: 20px; display: block; }
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">← 返回首页</a>
+  <h1 id="post-title">帖子</h1>
+
+  <!-- giscus 评论系统 -->
+  <script src="https://giscus.app/client.js"
+        data-repo="你的用户名/你的仓库名"
+        data-repo-id="你的仓库ID"
+        data-category="General"
+        data-category-id="分类ID"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get("title") || "未命名帖子";
+    document.getElementById("post-title").innerText = title;
+  </script>
+</body>
+</html>
